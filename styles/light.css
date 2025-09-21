@@ -1,9 +1,3 @@
-/*
-  Специально для светлой темы при наличии класса.
-  Здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
-
 :root.theme-light {
   --background-img: url('../images/cover-image-light.png');
   --background-color: #FFF1F7;
@@ -15,9 +9,10 @@
   --section-subsubheader-text-color: #353430;
 }
 
-:root.theme-light .header__decorative-text{
+:root.theme-light .header__decorative-text {
   display: none;
 }
+
 @media (prefers-color-scheme: light) {
   :root {
     --background-img: url('../images/cover-image-light.png');
@@ -27,10 +22,10 @@
     --section-header-text-color: #353430;
     --section-subheader-text-color: #353430;
     --section-text-text-color: #353430;
-    --section-subsubheader-text-color: #353430;  }
-  .header__decorative-text{
-    display: none;
+    --section-subsubheader-text-color: #353430;
   }
 
-  /* Остальные стили, только при необходимости */
+  .header__decorative-text {
+    display: none;
+  }
 }
