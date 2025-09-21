@@ -1,5 +1,401 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background-image: var(--background-img);
+  background-color: var(--background-color);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+}
+
+
+.header {
+  position: relative;
+  height: 100vh;
+  min-height: var(--min-height-header-footer);
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+}
+
+.header__text {
+  color: #000028;
+  font-family: 'IBM Plex Mono', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  justify-self: end;
+  align-self: center;
+
+  line-height: 1.3;
+  letter-spacing: 0;
+  margin-right: var(--main-gap);
+  margin-left: var(--main-gap);
+  margin-bottom: 10px;
+}
+
+.header__page-title {
+  margin-left: var(--main-gap);
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.header__decorative-text {
+  display: inline-flex;
+  align-items: center;
+  color: var(--accent-color);
+  font-family: 'IBM Plex Mono', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 0;
+  text-align: center;
+  top: var(--main-gap);
+  right: calc(var(--main-gap) + 9px);
+  position: absolute;
+  z-index: 10;
+}
+
+
+.header__decorative-text::after {
+  content: "";
+  margin-left: 10px;
+  vertical-align: middle;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent-color);
+}
+
+.header__theme-menu {
+  justify-self: right;
+  align-self: center;
+  margin-right: var(--main-gap);
+  margin-top: var(--main-gap);
+}
+
+.header__theme-menu-button {
+  background-color: transparent;
+  border: none;
+  color: var(--accent-color);
+  font: inherit;
+  padding: 3px 0.725em;
+  cursor: pointer;
+  outline: none;
+  box-shadow: none;
+  font-family: 'IBM Plex Mono', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: 0;
+  text-align: center;
+  text-transform: lowercase;
+  inline-size: min-content;
+  block-size: min-content;
+  margin: 6px 0;
+}
+
+.header__theme-menu-button:focus-visible {
+  border: 1px solid var(--accent-color);
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--accent-color);
+  pointer-events: none
+}
+
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+  top: var(--main-gap);
+  right: var(--main-gap);
+  width: 25px;
+  height: 25px;
+  border-top: 1px solid var(--accent-color);
+  border-right: 1px solid var(--accent-color);
+}
+
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  left: var(--main-gap);
+  bottom: var(--main-gap);
+  width: 25px;
+  height: 25px;
+  border-left: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
+  border-bottom-left-radius: 3px;
+}
+
+.page-title {
+  color: var(--header__text-color);
+  font-family: 'IBM Plex Mono', sans-serif;
+  font-weight: 700;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 83%;
+  letter-spacing: 0;
+}
+
+
+.footer__page-title {
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.footer {
+  position: relative;
+  height: 100vh;
+  min-height: var(--min-height-header-footer);
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--main-gap);
+}
+
+
+.title-background {
+  background-color: var(--accent-color);
+  height: min-content;
+
+}
+
+.section {
+  margin: 0 var(--main-gap) 0 var(--main-gap);
+}
+
+.section__header {
+  font-family: 'IBM Plex Mono', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.3;
+  letter-spacing: 0;
+  color: var(--section-header-text-color);
+  margin-bottom: 20px;
+  margin-top: 40px;
+  overflow: hidden;
+}
+
+.section:not(:first-child) {
+  margin-top: 50px;
+}
+
+.section:last-child {
+  margin-bottom: 40px;
+}
+
+.section__subheader {
+  font-family: 'IBM Plex Mono', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.3;
+  letter-spacing: 0;
+  color: var(--section-subheader-text-color);
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.tip_header {
+  font-family: 'IBM Plex Mono', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.3;
+  letter-spacing: 0;
+  color: var(--section-subsubheader-text-color);
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+
+.section__text {
+  font-family: 'IBM Plex Mono', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.3;
+  letter-spacing: 0;
+  color: var(--section-text-text-color);
+  margin-bottom: 20px;
+
+}
+
+
+.gallery {
+  display: grid;
+  gap: 5px;
+}
+
+.gallery__image {
+  width: 100%;
+}
+
+.link-in-text {
+  font-family: IBM Plex Mono, sans-serif;
+  font-weight: 400;
+  text-shadow: 2px 2px 0 var(--accent-color);
+  text-decoration: none;
+}
+
+.link-in-text:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--section-text-text-color);
+
+}
+
+@supports (-webkit-appearance: none) {
+  /*В safari (в том числе Chrome) появляется тень от нижнего подчеркивания */
+  /* Кажется, что в браузерах на Windows такой хак не нужен*/
+  .link-in-text:hover {
+    text-decoration: none;
+    border-bottom: 1px solid var(--section-text-text-color);
+  }
+}
+
+.link-in-text:focus-visible {
+  outline: 1px solid var(--section-text-text-color);;
+}
+
+
+@media (min-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    grid-template-areas:
+    "sunset sunset ice-cream"
+    "tape books ice-cream"
+    "tape street street";
+  }
+
+  .gallery__item-sunset {
+    grid-area: sunset;
+  }
+
+  .gallery__item-ice-cream {
+    grid-area: ice-cream;
+  }
+
+  .gallery__item-tape {
+    grid-area: tape;
+  }
+
+  .gallery__item-books {
+    grid-area: books;
+  }
+
+  .gallery__item-street {
+    grid-area: street;
+  }
+
+  .gallery__image {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .section__header {
+    margin-top: 0;
+  }
+
+  .text-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 0 20px;
+  }
+
+  .section-concentration-loss > :first-child {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .section-concentration-loss > :not(:first-child) {
+    grid-column: span 2;
+  }
+
+  .section-why-concentration-hard > :first-child {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .section-why-concentration-hard > :not(:first-child) {
+    grid-column: 2;
+  }
+
+  .section-focus-tips > :first-child {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .section-focus-tips > :not(:first-child) {
+    grid-column: 2;
+  }
+
+  .header__text {
+    width: calc(50vw - var(--main-gap));
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  :root {
+    --main-gap: 20px;
+    --min-height-header-footer: 1024px;
+
+  }
+
+  .header__page-title {
+    margin-left: 0
+  }
+
+  .page-title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem)
+  }
+
+  .section {
+    margin-top: 60px;
+  }
+
+  .section:not(:first-child) {
+    margin-top: 60px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --min-height-header-footer: 768px;
+  }
+
+  .section-concentration-loss {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .section-concentration-loss > :first-child {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .section-concentration-loss > :not(:first-child) {
+    grid-row: 2;
+    grid-column: auto;
+  }
+
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+
+  }
+
+  .header__theme-menu-list {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+
+  }
+
+  .text-section {
+    gap: 0 10px;
+  }
+
+  .section-concentration-loss {
+    gap: 0 20px;
+  }
+
+  .footer {
+    margin-top: 60px;
+  }
+
 }
