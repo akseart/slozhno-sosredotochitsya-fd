@@ -1,11 +1,14 @@
 :root {
-  --background-img: url('../images/cover-image.png');
+  --background-img: url(../images/cover-image-dark.png);
   --background-color: #000028;
-  --header__text-color: #DB00FF;
-  --accent-color: #FF0070;
+  --header__heading-text-color: #db00ff;
+  --header__text-color: #000028;
+  --menu-theme-color: #ff0070;
+  --menu-theme-color-transparent: #ff007066;
+  --accent-color: #ff0070;
   --section-header-text-color: var(--accent-color);
   --section-subheader-text-color: #000028;
-  --section-text-text-color: #F1B2CE;
+  --section-text-text-color: #f1b2ce;
   --section-subsubheader-text-color: #000028;
   --main-gap: 10px;
   --min-height-header-footer: 668px;
